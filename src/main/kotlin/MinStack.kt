@@ -9,47 +9,7 @@ import java.util.*
     top() -- Get the top element.
     getMin() -- Retrieve the minimum element in the stack.
  */
-
 class MinStack() {
-
-    /** initialize your data structure here. */
-    private val list = ArrayList<Int>()
-    private val treeMap = TreeMap<Int, ArrayList<Int>>()
-
-    fun push(x: Int) {
-        var indexList = treeMap[x]
-        if (indexList == null) {
-            indexList = ArrayList()
-            treeMap[x] = indexList
-        }
-        indexList.add(list.size)
-
-        list.add(x)
-    }
-
-    fun pop() {
-        if(list.size > 0) {
-            val index = list.size - 1
-            val x = list.removeAt(index)
-            val indexList = treeMap[x]
-            indexList!!.remove(index)
-            if(indexList.isEmpty()) {
-                treeMap.remove(x)
-            }
-        }
-    }
-
-    fun top(): Int? {
-        return if (list.size > 0) list[list.size - 1] else null
-    }
-
-    fun getMin(): Int? {
-        return if (treeMap.size > 0) treeMap.firstKey() else return null
-    }
-
-}
-
-class MinStack2() {
 
     /** initialize your data structure here. */
     private val dataStack = Stack<Int>()
@@ -92,7 +52,7 @@ class MinStack2() {
 
     @Test
     fun test1() {
-        var stack = MinStack2()
+        var stack = MinStack()
         stack.push(0)
         stack.push(1)
         stack.push(0)
@@ -103,7 +63,7 @@ class MinStack2() {
 
     @Test
     fun test2() {
-        var stack = MinStack2()
+        var stack = MinStack()
         stack.push(-2)
         stack.push(0)
         stack.push(-3)
