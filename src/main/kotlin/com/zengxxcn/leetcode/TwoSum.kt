@@ -1,3 +1,5 @@
+package com.zengxxcn.leetcode
+
 import junit.framework.Assert.assertTrue
 import org.junit.Test
 

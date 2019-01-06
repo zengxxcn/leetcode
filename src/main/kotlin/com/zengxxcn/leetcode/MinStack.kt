@@ -1,3 +1,5 @@
+package com.zengxxcn.leetcode
+
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import java.util.*
@@ -9,7 +11,7 @@ import java.util.*
     top() -- Get the top element.
     getMin() -- Retrieve the minimum element in the stack.
  */
-class MinStack() {
+class MinStack {
 
     /** initialize your data structure here. */
     private val dataStack = Stack<Int>()
@@ -41,8 +43,8 @@ class MinStack() {
 }
 
 /**
- * Your MinStack object will be instantiated and called as such:
- * var obj = MinStack()
+ * Your com.zengxxcn.leetcode.MinStack object will be instantiated and called as such:
+ * var obj = com.zengxxcn.leetcode.MinStack()
  * obj.push(x)
  * obj.pop()
  * var param_3 = obj.top()
