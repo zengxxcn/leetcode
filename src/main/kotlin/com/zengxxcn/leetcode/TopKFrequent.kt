@@ -2,6 +2,8 @@ package com.zengxxcn.leetcode
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.*
+import kotlin.Comparator
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/
@@ -25,9 +27,26 @@ class TopKFrequent {
                 .map { it.num }
     }
 
+    fun topKFrequent2(nums: IntArray, k: Int): List<Int> {
+        val map = mutableMapOf<Int, Int>()
+        for (num in nums) {
+            val frequency = map.computeIfAbsent(num) { 0 }
+            map[num] = frequency + 1
+        }
+        val priorityQueue = PriorityQueue<Int>(Comparator { o1: Int, o2: Int ->
+            map[o2]!! - map[o1]!!
+        })
+        map.forEach { priorityQueue.offer(it.key) }
+        val list = mutableListOf<Int>()
+        repeat (k) {
+           list.add(priorityQueue.poll())
+        }
+        return list
+    }
+
     @Test
     fun test() {
-        assertEquals(listOf(1), topKFrequent(listOf(1).toIntArray(), 1))
-        assertEquals(listOf(1, 2), topKFrequent(listOf(1,1,1,2,2,3).toIntArray(), 2))
+        assertEquals(listOf(1), topKFrequent2(listOf(1).toIntArray(), 1))
+        assertEquals(listOf(1, 2), topKFrequent2(listOf(1,1,1,2,2,3).toIntArray(), 2))
     }
 }
