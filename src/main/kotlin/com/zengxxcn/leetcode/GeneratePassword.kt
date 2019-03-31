@@ -6,7 +6,7 @@ object PasswordGenerator {
 
     /**
      * Generate passwords by replacing some characters with provided replacements in all combinations.
-     * 
+     *
      * seed = "apple", replacements = { "a": ["@", "4"], "p": ["%"], "z": ["^"] }
      * returns = ["apple", "@pple", "4pple", "a%ple", "ap%le", "@%ple", "4%ple", "@p%le", "4p%le", "a%%le", "@%%le", "4%%le"]
      */
