@@ -1,7 +1,7 @@
 package com.zengxxcn.leetcode
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class PasswordGenerator {
 
@@ -79,7 +79,7 @@ class PasswordGenerator {
     fun test() {
         val pwds = genPasswd("apple", mapOf( 'a' to listOf("@", "4"), 'p' to listOf("%"), 'z' to listOf("^") ))
         println("Generated ${pwds.size} passwords: $pwds")
-        Assert.assertEquals(3 * 2 * 2 * 1 * 1, pwds.size)
+        assertEquals(3 * 2 * 2 * 1 * 1, pwds.size)
     }
 
 }

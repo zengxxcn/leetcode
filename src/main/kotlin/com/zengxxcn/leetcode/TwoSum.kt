@@ -1,7 +1,8 @@
 package com.zengxxcn.leetcode
 
-import junit.framework.Assert.assertTrue
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 /**
  * https://leetcode.com/problems/two-sum/

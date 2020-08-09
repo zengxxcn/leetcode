@@ -1,13 +1,9 @@
 package com.zengxxcn.leetcode;
 
-import org.junit.Test;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Problem 3: https://leetcode.com/problems/longest-substring-without-repeating-characters/

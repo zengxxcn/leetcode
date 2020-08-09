@@ -1,7 +1,7 @@
 package com.zengxxcn.leetcode
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class BinarySearch {
 
@@ -25,8 +25,8 @@ class BinarySearch {
 
     @Test
     fun test1() {
-        Assert.assertEquals(search(intArrayOf(-1, 0, 3, 5, 9, 12), 9), 4)
-        Assert.assertEquals(search(intArrayOf(-1, 0, 3, 5, 9, 12), 2), -1)
-        Assert.assertEquals(search(intArrayOf(2, 5), 0), -1)
+        assertEquals(search(intArrayOf(-1, 0, 3, 5, 9, 12), 9), 4)
+        assertEquals(search(intArrayOf(-1, 0, 3, 5, 9, 12), 2), -1)
+        assertEquals(search(intArrayOf(2, 5), 0), -1)
     }
 }

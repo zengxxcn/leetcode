@@ -1,7 +1,7 @@
 package com.zengxxcn.leetcode
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Problem 2: https://leetcode.com/problems/add-two-numbers/
@@ -48,12 +48,12 @@ class AddTwoNumbers {
     }
 
     fun addTwo(l1: ListNode?, l2: ListNode?, addition: Int = 0): ListNode? {
-        if (l1 == null && l2 == null) return if (addition > 0) { ListNode(addition!!) } else null
+        if (l1 == null && l2 == null) return if (addition > 0) { ListNode(addition) } else null
         else if (l1 == null) {
-            return if (addition != null) addTwo(ListNode(addition), l2) else l2
+            return addTwo(ListNode(addition), l2)
         }
         else if (l2 == null) {
-            return if (addition != null) addTwo(l1, ListNode(addition)) else l1
+            return addTwo(l1, ListNode(addition))
         }
         else {
             val sum = l1.`val` + l2.`val` + addition
@@ -66,6 +66,7 @@ class AddTwoNumbers {
     fun plusTwoNumbers(a: Long, b: Long): Long {
         return addTwoNumbers(ListNode.fromLong(a), ListNode.fromLong(b))!!.toLong()
     }
+
     @Test
     fun test() {
         assertEquals(807, plusTwoNumbers(342, 465))
